@@ -30,4 +30,6 @@ This is an example on an iPad mini 6" screen: ![screenshot on ipad mini](./asset
 ## Contents of this repository
 This is a Flutter project, compatible Android and iOS. Here is how to install Flutter if you want to improve on the app.
 
+The code is inspired from the example given in [https://inappwebview.dev/docs/in-app-webview/basic-usage/](https://inappwebview.dev/docs/in-app-webview/basic-usage/)
+
 More ...
