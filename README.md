@@ -32,9 +32,9 @@ This is a Flutter project, compatible Android and iOS. Here is how to install Fl
 
 The code is inspired from the example given in [https://inappwebview.dev/docs/in-app-webview/basic-usage/](https://inappwebview.dev/docs/in-app-webview/basic-usage/)
 
-More ...
-
 * install Android Studio
 * install Flutter
 * fork and clone the repository
 * open the project in Android Studio and run
+
+  More ...
