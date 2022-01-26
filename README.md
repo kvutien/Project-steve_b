@@ -1,6 +1,6 @@
 # Steve_B Earth Observer
 ## Introduction
-When I visited some friends in Goshen, Indiana, USA, in 1991, I met there a group of Amish people. The head of the group could forecast the weather of the coming week quite accurately, although he had no meteorological academic background. He simply had a long observation experience, as a farmer. His friends even say that he could even predict pretty well the yield of the coming season.
+In 1991 when I visited some friends in Goshen, Indiana, USA, I met there a group of Amish people. The head of the group was a man who could forecast the weather of the coming week quite accurately, although he had no meteorological academic background. He simply had a long observation experience, as a farmer. His friends even say that he could even predict pretty well the yield of the coming season.
 
 As in this example, I'm deeply convinced that if people were given simple tools to observe satellite images, they can build their own knowledge, and if they can share this knowledge among them, together they can anticipate on potential weather changes for their families.
 
