@@ -65,6 +65,7 @@ class _SteveWebviewState extends State<SteveWebview> {
       home: Scaffold(
           appBar: AppBar(
             title: const Text("Steve_B Earth Observer"),
+            centerTitle: true,
             backgroundColor: Colors.lightGreen,
             foregroundColor: Colors.brown,
             toolbarHeight: 18.0,
