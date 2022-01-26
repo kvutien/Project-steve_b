@@ -17,6 +17,14 @@ In the honor of *Steve Birky*, my brother-in-law, who spent his life helping peo
 
 This is an example on an iPad mini 6" screen: ![screenshot on ipad mini](./assets/images/iPad_mini_6".png)
 
+* by default the app shows the Mekong delta in Vietnam,
+* click on "Search places" to go anywhere in the world,
+* click the image and drag to move the area that is displayed, 
+* the image is divided in 2 panes; click and drag the icon "<>" to change how the screen estate is shared between the 2,
+  * the left pane shows the satellite image taken by Copernicus on a desired date
+  * the right pane shows the Google data in several layers: map view, aerial view, vegetation view
+* on top left you have the zoom button. Click on "+" to zoom in. Click on "-" to zoom in.
+
 ## Contents of this repository
 This is a Flutter project, compatible Android and iOS.
 
