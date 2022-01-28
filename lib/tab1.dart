@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'dart:io'; // used in Platform.isIOS & Platform.isAndroid
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class Tab1 extends StatefulWidget {
   const Tab1({Key? key}) : super(key: key);
@@ -67,120 +69,23 @@ class _Tab1State extends State<Tab1> {
         child: Column(children: <Widget>[  // fill window with children widgets
             Expanded(
               // area to display tutorial content
-              child: Stack(
-                // stack widgets one above another
-                children: [
-                  InAppWebView(
-                    // the web content is at the bottom of the stack
-                    key: tutoKey,
-                    // id key to keep state of tutorial widget across widget tree
-                    initialUrlRequest:
-                        // URLRequest(url: Uri.parse("https://inappwebview.dev/")),
-                        URLRequest(url: Uri.parse(urlSteveTuto)),
-                    initialOptions: options,
-                    pullToRefreshController: pullToRefreshController,
-                    onWebViewCreated: (controller) {
-                      // callback when webview is created
-                      webViewController = controller;
-                    },
-                    onLoadStart: (controller, url) {
-                      // callback when web page starts loading
-                      setState(() {
-                        this.url = url.toString();
-                        urlController.text = this.url;
-                      });
-                    },
-                    androidOnPermissionRequest:
-                        (controller, origin, resources) async {
-                      return PermissionRequestResponse(
-                          resources: resources,
-                          action: PermissionRequestResponseAction.GRANT);
-                    },
-                    shouldOverrideUrlLoading:
-                        (controller, navigationAction) async {
-                      var uri = navigationAction.request.url!;
-
-                      if (![
-                        "http",
-                        "https",
-                        "file",
-                        "chrome",
-                        "data",
-                        "javascript",
-                        "about"
-                      ].contains(uri.scheme)) {
-                        if (await canLaunch(url)) {
-                          // Launch the Web App
-                          await launch(
-                            url,
-                          );
-                          // and cancel the request
-                          return NavigationActionPolicy.CANCEL;
-                        }
-                      }
-
-                      return NavigationActionPolicy.ALLOW;
-                    },
-                    onLoadStop: (controller, url) async {
-                      // callback when web page finishes loading
-                      pullToRefreshController.endRefreshing();
-                      setState(() {
-                        this.url = url.toString();
-                        urlController.text = this.url;
-                      });
-                    },
-                    onLoadError: (controller, url, code, message) {
-                      pullToRefreshController.endRefreshing();
-                    },
-                    onProgressChanged: (controller, progress) {
-                      if (progress == 100) {
-                        pullToRefreshController.endRefreshing();
-                      }
-                      setState(() {
-                        this.progress = progress / 100;
-                        urlController.text = this.url;
-                      });
-                    },
-                    onUpdateVisitedHistory: (controller, url, androidIsReload) {
-                      setState(() {
-                        this.url = url.toString();
-                        urlController.text = this.url;
-                      });
-                    },
-                    onConsoleMessage: (controller, consoleMessage) {
-                      print(consoleMessage);
-                    },
-                  ),
-                  // if the web page is still loading, show progress wheel
-                  //  on top of the webview display
-                  progress < 1.0
-                      ? LinearProgressIndicator(value: progress)
-                      : Container(),
-                ],
+              child: FutureBuilder(
+                future: rootBundle.loadString('assets/hello.md'),
+                builder: (BuildContext context,
+                    AsyncSnapshot<String> snapshot) {
+                  if(snapshot.hasData) {
+                    return Markdown(
+                        data: snapshot.data!,
+                      styleSheet: MarkdownStyleSheet(
+                        h1: TextStyle(color: Colors.blue, fontSize: 30.0),
+                      ),
+                    );
+                  }
+                  return Center (
+                    child: CircularProgressIndicator(),
+                  );
+                }
               ),
-            ),
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ElevatedButton(
-                  child: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    webViewController?.goBack();
-                  },
-                ),
-                ElevatedButton(
-                  child: Icon(Icons.arrow_forward),
-                  onPressed: () {
-                    webViewController?.goForward();
-                  },
-                ),
-                ElevatedButton(
-                  child: Icon(Icons.refresh),
-                  onPressed: () {
-                    webViewController?.reload();
-                  },
-                ),
-              ],
             ),
           ]),
       ),
