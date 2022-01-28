@@ -17,7 +17,8 @@ In the honor of *Steve Birky*, my brother-in-law, who spent his life helping peo
 
 Once the app installed, double-click on the app to launch. No login required. Nothing to pay.
 
-This is an example on an iPad mini 6" screen: ![screenshot on ipad mini](https://github.com/kvutien/steve_b/blob/main/assets/images/iPad_mini_6.png)
+This is an example on an iPad mini 6" screen: 
+![screenshot on ipad mini](resource:assets/images/iPad_mini_6.png)
 
 * By default the app shows the Mekong delta in Vietnam.
 * Click on "Search places" and type a location name. The app will move there, anywhere in the world.
