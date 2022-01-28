@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 // import 'package:provider/provider.dart';
 import 'package:steve_b/steve_webview.dart';
+import 'package:steve_b/tab1.dart';
 
 Future main() async {
   // binding to Binary Messenger, for Flutter to call platform-specific API
@@ -40,10 +41,10 @@ class SteveApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Colors.white,
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const SteveWebview(),
+      home: const /*SteveWebview*/Tab1(),
     );
   }
 }
