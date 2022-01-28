@@ -66,15 +66,7 @@ class _Tab2State extends State<Tab2> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: /*Scaffold(
-          appBar: AppBar(
-            title: const Text("Steve_B Earth Observer"),
-            centerTitle: true,
-            backgroundColor: Colors.lightGreen,
-            foregroundColor: Colors.brown,
-            toolbarHeight: 18.0,
-          ),
-          body:*/ SafeArea(
+      child: SafeArea(
               child: Column(children: <Widget>[
             TextField(
               // URL address field

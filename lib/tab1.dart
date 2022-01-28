@@ -14,7 +14,7 @@ class Tab1 extends StatefulWidget {
 }
 
 class _Tab1State extends State<Tab1> {
-  // this key makes any widget in the widget tree access the WebView state
+  // this key makes any widget in the widget tree access the Tutorial state
   final GlobalKey tutoKey = GlobalKey();
 
   InAppWebViewController? webViewController;
@@ -151,7 +151,7 @@ class _Tab1State extends State<Tab1> {
                       print(consoleMessage);
                     },
                   ),
-                  // if the web page is still loading, show progress bar
+                  // if the web page is still loading, show progress wheel
                   //  on top of the webview display
                   progress < 1.0
                       ? LinearProgressIndicator(value: progress)
