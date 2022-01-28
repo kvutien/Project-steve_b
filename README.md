@@ -5,7 +5,7 @@ In 1991 when I visited some friends in Goshen, Indiana, USA, I met there a group
 This example made me deeply convinced that if simple farmers were given simple tools to observe satellite images, they can build their own knowledge, and if they can share this knowledge among them, together they can anticipate on potential weather changes for their families.
 
 With the technologies available in the 21st century, this is possible:
-* **Google Earth Engine** brings free and up-to-date satellite images as well as powerful image processing tools.
+* **Google Earth Engine** or **EO Explorer** bring free and up-to-date satellite images as well as powerful image processing tools.
 * **Flutter** or **React Native** supports making mobile apps for Android and iOS.
 * **Blockchain** tools can be used to share in a decentralised and trusted manner each one's analysis, and build up individual reputation, as in the Amish community.
 
