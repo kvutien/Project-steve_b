@@ -62,9 +62,9 @@ class _Tab1State extends State<Tab1> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Steve Observer Tutorial Page',  // title of the HTML page
-      home: Column(children: <Widget>[  // fill window with children widgets
+    return Material(
+      child: SafeArea(
+        child: Column(children: <Widget>[  // fill window with children widgets
             Expanded(
               // area to display tutorial content
               child: Stack(
@@ -183,7 +183,7 @@ class _Tab1State extends State<Tab1> {
               ],
             ),
           ]),
-      debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

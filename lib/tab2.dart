@@ -1,20 +1,19 @@
 /*
   Flutter 2.8.1 stable, Android Studio 2021.1 Bumblebee, Android SDK 32
-  Navigate between screens of Steve Observer
+  Displays vegetation screen of Steve Observer
  */
 import 'package:flutter/material.dart';
 import 'dart:io'; // used in Platform.isIOS & Platform.isAndroid
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SteveWebview extends StatefulWidget {
-  const SteveWebview({Key? key}) : super(key: key);
-
+class Tab2 extends StatefulWidget {
+  const Tab2({Key? key}) : super(key: key);
   @override
-  _SteveWebviewState createState() => _SteveWebviewState();
+  _Tab2State createState() => _Tab2State();
 }
 
-class _SteveWebviewState extends State<SteveWebview> {
+class _Tab2State extends State<Tab2> {
   // this key makes any widget in the widget tree access the WebView state
   final GlobalKey webViewKey = GlobalKey();
 
@@ -36,7 +35,7 @@ class _SteveWebviewState extends State<SteveWebview> {
   String url = "";
   final String urlSteveObs =
       'https://apps.sentinel-hub.com/eo-browser/?zoom=12&lat=41.58684&lng=-85.82676&themeId=DEFAULT-THEME&visualizationUrl=https%3A%2F%2Fcreodias.sentinel-hub.com%2Fogc%2Fwms%2Fdae04f05-3a74-4563-9faa-0d05d2f8fbeb&datasetId=GLOBAL_HUMAN_SETTLEMENT&fromTime=2018-01-01T00%3A00%3A00.000Z&toTime=2018-01-01T23%3A59%3A59.999Z&layerId=GHS-BUILT-S2&gain=1.3';
-double progress = 0;
+  double progress = 0;
   final urlController = TextEditingController();
 
   @override
@@ -66,8 +65,8 @@ double progress = 0;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Material(
+      child: /*Scaffold(
           appBar: AppBar(
             title: const Text("Steve_B Earth Observer"),
             centerTitle: true,
@@ -75,7 +74,7 @@ double progress = 0;
             foregroundColor: Colors.brown,
             toolbarHeight: 18.0,
           ),
-          body: SafeArea(
+          body:*/ SafeArea(
               child: Column(children: <Widget>[
             TextField(
               // URL address field
@@ -209,7 +208,7 @@ double progress = 0;
                 ),
               ],
             ),
-          ]))),
+          ]))/*)*/,
     );
   }
 }

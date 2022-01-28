@@ -1,3 +1,7 @@
+/*
+  Flutter 2.8.1 stable, Android Studio 2021.1 Bumblebee, Android SDK 32
+  Main program of Steve Observer, (c) Vu Tien Khang, Jan 2022
+ */
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -23,7 +27,7 @@ class SteveApp extends StatelessWidget {
   // final _profileManager = ProfileManager();
   @override
   Widget build(BuildContext context) {
-    return /*MultiProvider(
+    return /*MultiProvider( // prepare future routing between screens
       providers: [
         ChangeNotifierProvider(
           create: (context) => _groceryManager,
