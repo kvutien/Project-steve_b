@@ -9,19 +9,19 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-class Tab1 extends StatefulWidget {
-  const Tab1({Key? key}) : super(key: key);
+class Tab3 extends StatefulWidget {
+  const Tab3({Key? key}) : super(key: key);
   @override
-  _Tab1State createState() => _Tab1State();
+  _Tab3State createState() => _Tab3State();
 }
 
-class _Tab1State extends State<Tab1> {
+class _Tab3State extends State<Tab3> {
   // this key makes any widget in the widget tree access the Tutorial state
   final GlobalKey tutoKey = GlobalKey();
 
   InAppWebViewController? webViewController;
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
-      // see all options in https://inappwebview.dev/docs/in-app-webview/webview-options/
+    // see all options in https://inappwebview.dev/docs/in-app-webview/webview-options/
       crossPlatform: InAppWebViewOptions(
         useShouldOverrideUrlLoading: true,
         mediaPlaybackRequiresUserGesture: false,
@@ -67,27 +67,28 @@ class _Tab1State extends State<Tab1> {
     return Material(
       child: SafeArea(
         child: Column(children: <Widget>[  // fill window with children widgets
-            Expanded(
-              // area to display tutorial content
-              child: FutureBuilder(
-                future: rootBundle.loadString('assets/hello.md'),
+          Expanded(
+            // area to display tutorial content
+            child: FutureBuilder(
+              // source of the markdown text to display
+                future: rootBundle.loadString('assets/machupicchu.md'),
                 builder: (BuildContext context,
                     AsyncSnapshot<String> snapshot) {
                   if(snapshot.hasData) {
-                      return Markdown(
-                          data: snapshot.data!,
-                        styleSheet: MarkdownStyleSheet(
-                          h1: TextStyle(color: Colors.blue, fontSize: 30.0),
-                        ),
-                      );
+                    return Markdown(
+                      data: snapshot.data!,
+                      styleSheet: MarkdownStyleSheet(
+                        h1: TextStyle(color: Colors.blue, fontSize: 30.0),
+                      ),
+                    );
                   }
                   return Center (
                     child: CircularProgressIndicator(),
                   );
                 }
-              ),
             ),
-          ]),
+          ),
+        ]),
       ),
     );
   }

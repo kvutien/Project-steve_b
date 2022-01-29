@@ -5,6 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:steve_b/tab1.dart';
 import 'package:steve_b/tab2.dart';
+import 'package:steve_b/tab3.dart';
+import 'package:steve_b/tab4.dart';
 
 class SteveWebview extends StatefulWidget {
   const SteveWebview({Key? key}) : super(key: key);
@@ -19,6 +21,8 @@ class _SteveWebviewState extends State<SteveWebview> {
   static List<Widget> tabs = <Widget> [
     const Tab1(), // display tutorial page
     const Tab2(), // display vegetation page
+    const Tab3(), // display Slivertest code
+    const Tab4(), // display Slivertest code
   ];
 
   void _onItemTapped(int index) {
@@ -39,6 +43,8 @@ class _SteveWebviewState extends State<SteveWebview> {
       ),
       body: tabs[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.lightGreen[800],
         selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -51,7 +57,15 @@ class _SteveWebviewState extends State<SteveWebview> {
             icon: Icon(Icons.agriculture_outlined),
             label: 'Vegetation',
           ),
-          /*const BottomNavigationBarItem(
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mode),
+            label: 'Test Sliver',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mode),
+            label: 'Test SingleChildScroll',
+          ),
+          /* BottomNavigationBarItem(
             icon: Icon(Icons.radar),
             label: 'Card3',
           ),*/
